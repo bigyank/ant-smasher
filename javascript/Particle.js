@@ -1,10 +1,13 @@
-function Particle(x, y, radius, color) {
+function Particle(x, y, radius, mass, velocity, color) {
   this.x = x;
   this.y = y;
   this.radius = radius;
   this.color = color;
-  this.mass = 1;
-  this.velocity = { x: Math.random() - 0.5, y: Math.random() - 0.5 };
+  this.mass = mass;
+  this.velocity = {
+    x: Math.random() - 0.5 * velocity,
+    y: Math.random() - 0.5 * velocity,
+  };
 
   this.draw = function () {
     canvas.beginPath();

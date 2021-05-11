@@ -11,22 +11,26 @@ addEventListener("resize", () => {
   canvasElement.width = innerWidth;
   canvasElement.height = innerHeight;
 
-  init();
+  createParticles();
 });
 
+// particle properties
 let particles = [];
 const numberOfParticles = 100;
+const radiousRange = { min: 10, max: 15 };
+const mass = 1;
+const velocity = 2;
 
 // create particles with random value
 function createParticles() {
   [...Array(numberOfParticles)].map(function () {
-    const radious = getRandRange(10, 15);
+    const radious = getRandRange(radiousRange);
     const { x, y } = getRandCoordinate(radious);
     const color = generateRandomColor();
 
     // check if particle overlaps another
     checkDuplicate(x, y, radious);
-    particles.push(new Particle(x, y, radious, color));
+    particles.push(new Particle(x, y, radious, mass, velocity, color));
   });
 }
 
