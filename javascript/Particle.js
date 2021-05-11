@@ -9,7 +9,13 @@ function Particle(x, y, radius, mass, velocity, color) {
     y: Math.random() - 0.5 * velocity,
   };
 
-  this.draw = function () {
+  this.drawAnt = function () {
+    var img = new Image();
+    img.src = "./images/ant.png";
+    canvas.drawImage(img, this.x, this.y, 25, 32);
+  };
+
+  this.drawParticles = function () {
     canvas.beginPath();
     canvas.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
     canvas.fillStyle = this.color;

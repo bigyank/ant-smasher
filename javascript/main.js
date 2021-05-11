@@ -37,7 +37,7 @@ function animateParticles() {
   canvas.clearRect(0, 0, canvasElement.width, canvasElement.height);
 
   particles.forEach((particle) => {
-    particle.draw();
+    particle.drawAnt();
     particle.move();
     particle.bounceWalls();
     particle.bounceEachOther(particles);
@@ -49,6 +49,6 @@ animateParticles();
 
 canvasElement.addEventListener("click", ({ clientX, clientY }) => {
   particles = particles.filter((particle) => {
-    return calculateDistance(clientX, clientY, particle.x, particle.y) > 20;
+    return calculateDistance(clientX, clientY, particle.x, particle.y) > 30;
   });
 });
