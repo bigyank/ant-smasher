@@ -46,3 +46,9 @@ function animateParticles() {
 
 createParticles();
 animateParticles();
+
+canvasElement.addEventListener("click", ({ clientX, clientY }) => {
+  particles = particles.filter((particle) => {
+    return calculateDistance(clientX, clientY, particle.x, particle.y) > 20;
+  });
+});
