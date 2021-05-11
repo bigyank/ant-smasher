@@ -1,27 +1,15 @@
-// get canvas
-const canvasElement = document.querySelector("canvas");
-const canvas = canvasElement.getContext("2d");
+/**
+ * SEE contants.js for particle values
+ * SEE canvas.js for canvas properties
+ * SEE Particle.js for Particle Class
+ * SEE Utility.js for utility functions
+ * SEE collision.js for collision detection and direction change
+ */
 
-//  set canvas width and height to screen
-canvasElement.width = window.innerWidth;
-canvasElement.height = window.innerHeight;
-
-// canvas size re adjust on screen change
-addEventListener("resize", () => {
-  canvasElement.width = innerWidth;
-  canvasElement.height = innerHeight;
-
-  createParticles();
-});
-
-// particle properties
+// particle container
 let particles = [];
-const numberOfParticles = 100;
-const radiousRange = { min: 10, max: 15 };
-const mass = 1;
-const velocity = 2;
 
-// create particles with random value
+// create particles with given values
 function createParticles() {
   [...Array(numberOfParticles)].map(function () {
     const radious = getRandRange(radiousRange);
