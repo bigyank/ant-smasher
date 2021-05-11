@@ -13,12 +13,16 @@ let particles = [];
 function createParticles() {
   [...Array(numberOfParticles)].map(function () {
     const radious = getRandRange(radiousRange);
+    const width = getRandRange(widthAnt);
+    const height = getRandRange(heightAnt);
     const { x, y } = getRandCoordinate(radious);
     const color = generateRandomColor();
 
     // check if particle overlaps another
     checkDuplicate(x, y, radious);
-    particles.push(new Particle(x, y, radious, mass, velocity, color));
+    particles.push(
+      new Particle(x, y, radious, mass, velocity, color, width, height)
+    );
   });
 }
 
@@ -37,7 +41,8 @@ function animateParticles() {
   canvas.clearRect(0, 0, canvasElement.width, canvasElement.height);
 
   particles.forEach((particle) => {
-    particle.drawAnt();
+    if (isParticle) particle.drawParticles();
+    if (isAnt) particle.drawAnt();
     particle.move();
     particle.bounceWalls();
     particle.bounceEachOther(particles);

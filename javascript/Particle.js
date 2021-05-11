@@ -1,9 +1,11 @@
-function Particle(x, y, radius, mass, velocity, color) {
+function Particle(x, y, radius, mass, velocity, color, width, height) {
   this.x = x;
   this.y = y;
   this.radius = radius;
   this.color = color;
   this.mass = mass;
+  this.width = width;
+  this.height = height;
   this.velocity = {
     x: Math.random() - 0.5 * velocity,
     y: Math.random() - 0.5 * velocity,
@@ -12,7 +14,7 @@ function Particle(x, y, radius, mass, velocity, color) {
   this.drawAnt = function () {
     var img = new Image();
     img.src = "./images/ant.png";
-    canvas.drawImage(img, this.x, this.y, 25, 32);
+    canvas.drawImage(img, this.x, this.y, this.width, this.height);
   };
 
   this.drawParticles = function () {
