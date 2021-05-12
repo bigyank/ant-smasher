@@ -13,3 +13,11 @@ addEventListener("resize", () => {
 
   createParticles();
 });
+
+// get input element
+const toggleSwitch = document.getElementById("toggle-switch");
+toggleSwitch.addEventListener("change", () => {
+  !toggleSwitch.checked
+    ? ((isAnt = true), (isParticle = false))
+    : ((isParticle = true), (isAnt = false));
+});
