@@ -19,3 +19,6 @@ const toggleSwitch = document.getElementById("toggle-switch");
 toggleSwitch.addEventListener("change", () => {
   (isAnt = !isAnt), (isParticle = !isParticle);
 });
+
+// get score
+const scoreElement = document.getElementById("score");

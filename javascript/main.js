@@ -8,6 +8,7 @@
 
 // particle container
 let particles = [];
+let score = 0;
 
 // create particles with given values
 function createParticles() {
@@ -54,6 +55,10 @@ animateParticles();
 
 canvasElement.addEventListener("click", ({ clientX, clientY }) => {
   particles = particles.filter((particle) => {
-    return calculateDistance(clientX, clientY, particle.x, particle.y) > 30;
+    if (calculateDistance(clientX, clientY, particle.x, particle.y) > 30) {
+      return true;
+    }
+    score++;
+    scoreElement.innerText = score;
   });
 });

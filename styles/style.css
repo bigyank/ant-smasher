@@ -63,3 +63,12 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+/* score */
+.score-container {
+  position: absolute;
+  line-height: 0;
+  right: 10px;
+  color: #39ff14;
+  font-size: 50px;
+}
