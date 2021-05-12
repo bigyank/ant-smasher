@@ -66,9 +66,10 @@ input:checked + .slider:before {
 
 /* score */
 .score-container {
+  font-family: "Oswald", sans-serif;
   position: absolute;
   line-height: 0;
-  right: 10px;
+  right: 25px;
   color: #39ff14;
   font-size: 50px;
 }
